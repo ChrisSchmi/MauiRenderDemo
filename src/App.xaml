@@ -9,6 +9,9 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <ImageSource x:Key="DotNetBot">dotnet_bot_fade.png</ImageSource>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

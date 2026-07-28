@@ -5,17 +5,29 @@
              x:Class="MauiRenderDemo.MainPage"
             Title="Login">
 
-    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+    <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
 
         <GraphicsView x:Name="PlasmaView"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand">
+                      HorizontalOptions="Fill"
+                      VerticalOptions="Fill">
             <GraphicsView.Drawable>
                 <local:PlasmaDrawable x:Name="Drawable" />
             </GraphicsView.Drawable>
         </GraphicsView>
 
-        <Border HorizontalOptions="Center"
+        <GraphicsView
+                x:Name="FadeView"
+                HorizontalOptions="Fill" 
+                VerticalOptions="Fill">
+            <GraphicsView.Drawable>
+                <local:BackgroundImageDrawable x:Name="FadedBackgroundDrawable" ImageFile="{StaticResource DotNetBot}" />
+            </GraphicsView.Drawable>
+        </GraphicsView>
+
+
+        <Border
+            IsVisible="true"
+            HorizontalOptions="Center"
                 VerticalOptions="Center"
                 WidthRequest="320"
                 Padding="25"

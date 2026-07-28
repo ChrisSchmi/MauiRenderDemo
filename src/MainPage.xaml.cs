@@ -1,4 +1,7 @@
-﻿using SkiaSharp;
+﻿//#define ANIMATION
+#define ANIMATION_OFF
+
+using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using System.Diagnostics;
 
@@ -12,13 +15,36 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
 
+#if ANIMATION
+
+        FadeView.IsVisible = false;
+        PlasmaView.IsVisible = true;
         // Loop starten
         Dispatcher.DispatchDelayed(TimeSpan.Zero, AnimationLoop);
+
+#else
+        FadeView.IsVisible = true;
+        PlasmaView.IsVisible = false;
+        Dispatcher.Dispatch(DrawFadedBackground);
+#endif
+    }
+
+    private void DrawFadedBackground()
+    {
+        FadeView.Invalidate();
     }
 
     private void AnimationLoop()
     {
-        if (!_isAnimating) return;
+        if (!_isAnimating)
+        {
+            return;
+        }
+
+        if(PlasmaView.IsVisible is false)
+        {
+            return;
+        }
 
         // Signalisiert dem GraphicsView, sich neu zu zeichnen
         PlasmaView.Invalidate();

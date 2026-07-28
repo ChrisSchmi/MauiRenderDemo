@@ -60,6 +60,14 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<!--For the fading background image-->
+	<ItemGroup>
+	  <MauiImage Include="Resources\raw\dotnet_bot_fade.png">
+	    <Resize>True</Resize>
+	    <BaseSize>300,185</BaseSize>
+	  </MauiImage>
+	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
