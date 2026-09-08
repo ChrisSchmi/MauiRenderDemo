@@ -10,7 +10,7 @@
     <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
 
         <GraphicsView x:Name="PlasmaView"
-                      IsVisible="False"
+                      IsVisible="true"
                       HorizontalOptions="Fill"
                       VerticalOptions="Fill">
             <GraphicsView.Drawable>
@@ -117,6 +117,7 @@
     
 
     <FlexLayout
+        IsVisible="true"
         Wrap="Wrap"
         JustifyContent="SpaceEvenly"
         AlignItems="Center"
