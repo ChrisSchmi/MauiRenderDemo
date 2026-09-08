@@ -20,7 +20,10 @@
                 HorizontalOptions="Fill" 
                 VerticalOptions="Fill">
             <GraphicsView.Drawable>
-                <local:BackgroundImageDrawable x:Name="FadedBackgroundDrawable" ImageFile="{StaticResource DotNetBot}" />
+                <local:BackgroundImageDrawable
+                    x:Name="FadedBackgroundDrawable"
+                    VisibleImagePosition="Bottom"
+                    ImageFile="{StaticResource DotNetBot}" />
             </GraphicsView.Drawable>
         </GraphicsView>
 
