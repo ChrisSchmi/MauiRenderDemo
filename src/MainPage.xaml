@@ -2,12 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiRenderDemo"
+             xmlns:controls="clr-namespace:MauiRenderDemo.Controls"
              x:Class="MauiRenderDemo.MainPage"
+             x:Name="Main"
             Title="Login">
 
     <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
 
         <GraphicsView x:Name="PlasmaView"
+                      IsVisible="False"
                       HorizontalOptions="Fill"
                       VerticalOptions="Fill">
             <GraphicsView.Drawable>
@@ -111,6 +114,47 @@
             </StackLayout>
         </Border>
 
+    
+
+    <FlexLayout
+        Wrap="Wrap"
+        JustifyContent="SpaceEvenly"
+        AlignItems="Center"
+        Padding="24,1">
+
+        <!-- 1) Wie im Bild: Kreis, Font-Awesome-Icon, mit Text, per Command steuerbar -->
+        <controls:IconTileView ShapeType="Circle"
+                                ShapeColor="#FFBA00"
+                                ShapeSize="72"
+                                IconGlyph="&#xf030;"
+                                IconFontFamily="FASolid"
+                                IconColor="White"
+                                CaptionText="Vorschau"
+                                Command="{Binding IconTileCommand, Source={x:Reference Main}}"
+                                Margin="12" />
+
+        <!-- 2) Viereck mit abgerundeten Ecken, Emoji als Icon, kein Text -->
+        <controls:IconTileView ShapeType="RoundedRectangle"
+                                CaptionText=""
+                                CornerRadius="18"
+                                ShapeColor="#FF0043"
+                                ShapeSize="72"
+                                IconGlyph="📷"
+                                IconFontSize="30"
+                                Command="{Binding IconTileCommand, Source={x:Reference Main}}"
+                                Margin="12" />
+
+        <!-- 3) Scharfkantiges Viereck, andere Farbe, mit Text -->
+        <controls:IconTileView ShapeType="Rectangle"
+                                ShapeColor="#00cccc"
+                                ShapeSize="72"
+                                IconGlyph="&#xf07b;"
+                                IconFontFamily="FASolid"
+                                CaptionText="Ordner"
+                                Command="{Binding IconTileCommand, Source={x:Reference Main}}"
+                                Margin="12" />
+
+    </FlexLayout>
     </Grid>
 
 

@@ -4,15 +4,22 @@
 using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using System.Diagnostics;
+using System.Windows.Input;
 
 namespace MauiRenderDemo;
 
 public partial class MainPage : ContentPage
 {
     private bool _isAnimating = true;
-
+    public ICommand IconTileCommand { private set; get; }
     public MainPage()
     {
+        // vor InitializeComponent - dann klappt die Bindung.
+        IconTileCommand = new Command(() =>
+        {
+            System.Diagnostics.Debug.WriteLine("Y0!");
+        });
+
         InitializeComponent();
 
 #if ANIMATION
