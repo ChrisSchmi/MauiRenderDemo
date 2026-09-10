@@ -133,6 +133,8 @@
                                 CaptionText="Vorschau"
                                 CaptionColor="#FF0000"
                                 Command="{Binding IconTileCommand, Source={x:Reference Main}}"
+                                BorderColor="#0fbaf0"
+                                BorderThickness="1"
                                 Margin="12" />
 
         <!-- 2) Viereck mit abgerundeten Ecken, Emoji als Icon, kein Text -->
@@ -152,6 +154,7 @@
                                 ShapeSize="72"
                                 IconGlyph="&#xf07b;"
                                 IconFontFamily="FASolid"
+                                IconColor="#fbfa00"
                                 CaptionText="Ordner"
                                 Command="{Binding IconTileCommand, Source={x:Reference Main}}"
                                 Margin="12" />
