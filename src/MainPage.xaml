@@ -132,6 +132,7 @@
                                 IconColor="White"
                                 CaptionText="Vorschau"
                                 CaptionColor="#FF0000"
+                                ClickColor="#00ff00"
                                 Command="{Binding IconTileCommand, Source={x:Reference Main}}"
                                 BorderColor="#0fbaf0"
                                 BorderThickness="1"
@@ -142,6 +143,7 @@
                                 CaptionText=""
                                 CornerRadius="18"
                                 ShapeColor="#FF0043"
+                                
                                 ShapeSize="72"
                                 IconGlyph="🐣"
                                 IconFontSize="30"
@@ -155,6 +157,7 @@
                                 IconGlyph="&#xf07b;"
                                 IconFontFamily="FASolid"
                                 IconColor="#fbfa00"
+                                ClickColor="#ddff00ff"
                                 CaptionText="Ordner"
                                 Command="{Binding IconTileCommand, Source={x:Reference Main}}"
                                 Margin="12" />

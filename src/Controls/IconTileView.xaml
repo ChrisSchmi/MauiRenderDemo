@@ -37,8 +37,8 @@
 
             <Border.Behaviors>
                 <toolkit:TouchBehavior
-                HoveredBackgroundColor="#10000000"
-                PressedBackgroundColor="#30000000"
+                HoveredBackgroundColor="{Binding Source={x:Reference Root}, Path=ClickColor}"
+                PressedBackgroundColor="{Binding Source={x:Reference Root}, Path=ClickColor}"
                 PressedOpacity="0.8" />
             </Border.Behaviors>
 

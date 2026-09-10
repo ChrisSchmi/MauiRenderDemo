@@ -59,6 +59,25 @@ public partial class IconTileView : ContentView
         set => SetValue(ShapeSizeProperty, value);
     }
 
+
+
+
+    public static readonly BindableProperty ClickColorProperty =
+    BindableProperty.Create(
+        nameof(ClickColor),
+        typeof(Color),
+        typeof(IconTileView),
+        Color.FromHex("#10000000"));
+
+    /// <summary>Füllfarbe der Form - per XAML frei konfigurierbar.</summary>
+    public Color ClickColor
+    {
+        get => (Color)GetValue(ClickColorProperty);
+        set => SetValue(ClickColorProperty, value);
+    }
+
+
+
     public static readonly BindableProperty ShapeColorProperty =
         BindableProperty.Create(
             nameof(ShapeColor),
