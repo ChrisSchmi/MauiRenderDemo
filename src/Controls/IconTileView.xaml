@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MauiRenderDemo.Controls.IconTileView"
              x:Name="Root">
 
@@ -33,6 +34,13 @@
                         Radius="8"
                         Offset="0,3" />
             </Border.Shadow>
+
+            <Border.Behaviors>
+                <toolkit:TouchBehavior
+                HoveredBackgroundColor="#10000000"
+                PressedBackgroundColor="#30000000"
+                PressedOpacity="0.8" />
+            </Border.Behaviors>
 
             <!-- WICHTIG: InputTransparent="True" verhindert, dass das Label den Klick "schluckt" -->
             <Label x:Name="IconLabel"
