@@ -35,11 +35,14 @@
                         Offset="0,3" />
             </Border.Shadow>
 
+
             <Border.Behaviors>
                 <toolkit:TouchBehavior
                 HoveredBackgroundColor="{Binding Source={x:Reference Root}, Path=ClickColor}"
                 PressedBackgroundColor="{Binding Source={x:Reference Root}, Path=ClickColor}"
-                PressedOpacity="0.8" />
+                PressedOpacity="0.8"
+                Command="{Binding Source={x:Reference Root}, Path=Command}"
+                CommandParameter="{Binding Source={x:Reference Root}, Path=CommandParameter}" />
             </Border.Behaviors>
 
             <!-- WICHTIG: InputTransparent="True" verhindert, dass das Label den Klick "schluckt" -->
