@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:renderers="clr-namespace:MauiRenderDemo.Renderers"
              x:Class="MauiRenderDemo.FadingBackgroundPage"
-             x:Name="FadingBackgroundPage"
+             x:Name="FBGPage"
              Title="FadingBackgroundPage">
     <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
         <GraphicsView
@@ -22,9 +22,9 @@
             Margin="20,10"
             RowSpacing="5"
             RowDefinitions="5*,1*,1*,1*,5*">
-            <Button Grid.Row="1" Text="Top" Command="{Binding SetBackgroundCommand, Source={x:Reference FadingBackgroundPage}}" CommandParameter="top" />
-            <Button Grid.Row="2" Text="Full" Command="{Binding SetBackgroundCommand, Source={x:Reference FadingBackgroundPage}}" CommandParameter="full" />
-            <Button Grid.Row="3" Text="Bottom" Command="{Binding SetBackgroundCommand, Source={x:Reference FadingBackgroundPage}}" CommandParameter="bottom" />
+            <Button Grid.Row="1" Text="Top" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="top" />
+            <Button Grid.Row="2" Text="Full" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="full" />
+            <Button Grid.Row="3" Text="Bottom" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="bottom" />
         </Grid>
         
         
