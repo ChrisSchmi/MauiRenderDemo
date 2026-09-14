@@ -34,9 +34,15 @@
         Route="ButtonPage"
         Title="ButtonPage"
         ContentTemplate="{DataTemplate local:ButtonPage}" />
+    
     <ShellContent
         Route="FadingBackgroundPage"
         Title="FadingBackgroundPage"
         ContentTemplate="{DataTemplate local:FadingBackgroundPage}" />
+
+    <ShellContent
+        Route="BottomSheetPage"
+        Title="BottomSheetPage"
+        ContentTemplate="{DataTemplate local:BottomSheetPage}" />
 
 </Shell>

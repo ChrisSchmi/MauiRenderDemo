@@ -19,6 +19,8 @@ public partial class AppShell : Shell
         Routes.Add(nameof(ButtonPage), typeof(ButtonPage));
         Routes.Add(nameof(AnimationPage), typeof(AnimationPage));
         Routes.Add(nameof(FadingBackgroundPage), typeof(FadingBackgroundPage));
+        Routes.Add(nameof(BottomSheetPage), typeof(BottomSheetPage));
+        
 
         foreach (var item in Routes)
         {

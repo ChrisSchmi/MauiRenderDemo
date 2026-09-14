@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit"
+             x:Class="MauiRenderDemo.BottomSheetPage"
+             x:Name="BSPage"
+             Title="BottomSheetPage">
+    <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+
+        <Border HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="300"
+                HeightRequest="300"
+                StrokeShape="RoundRectangle 12"
+                StrokeThickness="1"
+                Stroke="#E0E0E0"
+                BackgroundColor="#E6FFFFFF">
+            <Grid
+                Margin="20,10"
+                RowSpacing="5"
+                RowDefinitions="1*,1*,1*,1*">
+                <Button Grid.Row="1" Text="Show" Command="{Binding ShowBottomSheetCommand, Source={x:Reference BSPage}}" />
+                <Button Grid.Row="2" Text="Hide" Command="{Binding HideBottomSheetCommand, Source={x:Reference BSPage}}" />
+            </Grid>
+        </Border>
+
+        <syncfusion:SfBottomSheet
+            x:Name="BottomSheet"
+            AllowedState="HalfExpanded"
+            EnableSwiping="False"
+            AnimationDuration="250"
+            HalfExpandedRatio="0.25"
+            CornerRadius="15, 15, 0, 0">
+            <syncfusion:SfBottomSheet.BottomSheetContent>
+                <Grid>
+                    <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="Hello" />
+                </Grid>
+            </syncfusion:SfBottomSheet.BottomSheetContent>
+        </syncfusion:SfBottomSheet>
+
+
+    </Grid>
+</ContentPage>

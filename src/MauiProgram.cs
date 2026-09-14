@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Toolkit.Hosting;
 
 namespace MauiRenderDemo;
 
@@ -11,17 +12,18 @@ public static class MauiProgram
 		builder
 			.UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
-			.ConfigureFonts(fonts =>
+            .ConfigureSyncfusionToolkit()
+            .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 
-                // Beispiel für Font Awesome 6 Free Solid:
-                fonts.AddFont("fa-solid-900.otf", "FASolid");
-                // Optional auch Regular/Brands:
-                fonts.AddFont("fa-regular-400.otf", "FARegular");
-                fonts.AddFont("fa-brands-400.otf", "FABrands");
-            });
+				// Beispiel für Font Awesome 6 Free Solid:
+				fonts.AddFont("fa-solid-900.otf", "FASolid");
+				// Optional auch Regular/Brands:
+				fonts.AddFont("fa-regular-400.otf", "FARegular");
+				fonts.AddFont("fa-brands-400.otf", "FABrands");
+			});
 
 #if DEBUG
 		builder.Logging.AddDebug();
