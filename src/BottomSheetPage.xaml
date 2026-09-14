@@ -28,7 +28,6 @@
             x:Name="BottomSheet"
             AllowedState="HalfExpanded"
             EnableSwiping="False"
-            AnimationDuration="200"
             HalfExpandedRatio="0.25"
             CornerRadius="15, 15, 0, 0">
             <syncfusion:SfBottomSheet.BottomSheetContent>
