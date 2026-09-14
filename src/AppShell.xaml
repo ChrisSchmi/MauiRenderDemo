@@ -11,6 +11,10 @@
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
 
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
