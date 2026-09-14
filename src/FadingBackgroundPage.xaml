@@ -27,12 +27,12 @@
                 Stroke="#E0E0E0"
                 BackgroundColor="#E6FFFFFF">
             <Grid
-            Margin="20,10"
-            RowSpacing="5"
-            RowDefinitions="1*,1*,1*,1*,1*">
-                <Button Grid.Row="1" Text="Top" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="top" />
-                <Button Grid.Row="2" Text="Full" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="full" />
-                <Button Grid.Row="3" Text="Bottom" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="bottom" />
+                Margin="20,10"
+                RowSpacing="5"
+                RowDefinitions="1*,1*,1*,1*,1*">
+                    <Button Grid.Row="1" Text="Top" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="top" />
+                    <Button Grid.Row="2" Text="Full" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="full" />
+                    <Button Grid.Row="3" Text="Bottom" Command="{Binding SetBackgroundCommand, Source={x:Reference FBGPage}}" CommandParameter="bottom" />
             </Grid>
         </Border>
 
