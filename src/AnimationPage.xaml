@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiRenderDemo.AnimationPage"
+             xmlns:renderers="clr-namespace:MauiRenderDemo.Renderers"
+             Title="AnimationPage">
+    <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+
+        <GraphicsView x:Name="PlasmaView"
+                      IsVisible="true"
+                      HorizontalOptions="Fill"
+                      VerticalOptions="Fill">
+            <GraphicsView.Drawable>
+                <renderers:PlasmaDrawable x:Name="Drawable" />
+            </GraphicsView.Drawable>
+        </GraphicsView>
+    </Grid>
+</ContentPage>

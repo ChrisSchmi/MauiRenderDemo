@@ -12,6 +12,11 @@
         Route="MainPage" />
 
     <ShellContent
+        Route="AnimationPage"
+        Title="Animation"
+        ContentTemplate="{DataTemplate local:AnimationPage}" />
+
+    <ShellContent
         Route="ForgotPasswordPage"
         Title="ForgotPassword"
         ContentTemplate="{DataTemplate local:ForgotPasswordPage}" />

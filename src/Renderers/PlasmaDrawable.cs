@@ -219,7 +219,7 @@ using MauiColor = Microsoft.Maui.Graphics.Color;
 using MauiICanvas = Microsoft.Maui.Graphics.ICanvas;
 using MauiRectF = Microsoft.Maui.Graphics.RectF;
 
-namespace MauiRenderDemo;
+namespace MauiRenderDemo.Renderers;
 
 public class PlasmaDrawable : IDrawable
 {

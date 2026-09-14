@@ -8,16 +8,6 @@
             Title="Login">
 
     <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
-
-        <GraphicsView x:Name="PlasmaView"
-                      IsVisible="true"
-                      HorizontalOptions="Fill"
-                      VerticalOptions="Fill">
-            <GraphicsView.Drawable>
-                <local:PlasmaDrawable x:Name="Drawable" />
-            </GraphicsView.Drawable>
-        </GraphicsView>
-
         <GraphicsView
                 x:Name="FadeView"
                 HorizontalOptions="Fill" 

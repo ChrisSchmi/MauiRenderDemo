@@ -17,6 +17,7 @@ public partial class AppShell : Shell
         Routes.Add(nameof(MainPage), typeof(MainPage));
         Routes.Add(nameof(ForgotPasswordPage), typeof(ForgotPasswordPage));
         Routes.Add(nameof(ButtonPage), typeof(ButtonPage));
+        Routes.Add(nameof(AnimationPage), typeof(AnimationPage));
 
         foreach (var item in Routes)
         {
