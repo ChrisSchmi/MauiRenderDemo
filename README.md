@@ -8,3 +8,12 @@ AI generated Plasma animation with some modifications by me. Have fun ;-)
 
 ## BackgroundImageDrawable
 <img width="407" height="865" alt="image" src="https://github.com/user-attachments/assets/a68b0b19-64f7-46c2-84ac-10069448b525" />
+
+## Fading Background Page
+
+<img width="416" height="917" alt="image" src="https://github.com/user-attachments/assets/e3f37748-8277-42f5-a6ea-0eb44cd4cfda" />
+
+## Animation Page
+<img width="410" height="907" alt="image" src="https://github.com/user-attachments/assets/fc83dca1-e659-4a5a-b9bd-c6ca0b7354ed" />
+
+            
