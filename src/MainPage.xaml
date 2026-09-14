@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiRenderDemo"
              xmlns:controls="clr-namespace:MauiRenderDemo.Controls"
+             xmlns:renderers="clr-namespace:MauiRenderDemo.Renderers"
              x:Class="MauiRenderDemo.MainPage"
              x:Name="Main"
             Title="Login">
@@ -13,7 +13,7 @@
                 HorizontalOptions="Fill" 
                 VerticalOptions="Fill">
             <GraphicsView.Drawable>
-                <local:BackgroundImageDrawable
+                <renderers:BackgroundImageDrawable
                     x:Name="FadedBackgroundDrawable"
                     VisibleImagePosition="Bottom"
                     ImageFile="{StaticResource DotNetBot}" />

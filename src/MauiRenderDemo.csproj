@@ -79,6 +79,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="FadingBackgroundPage.xaml.cs">
+	    <DependentUpon>FadingBackgroundPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ForgotPasswordPage.xaml.cs">
 	    <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
 	  </Compile>
@@ -89,6 +92,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ButtonPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="FadingBackgroundPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ForgotPasswordPage.xaml">

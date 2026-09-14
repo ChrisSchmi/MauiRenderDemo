@@ -6,12 +6,13 @@ using System.Text;
 using static Microsoft.Maui.Controls.Button.ButtonContentLayout;
 using IImage = Microsoft.Maui.Graphics.IImage;
 
-namespace MauiRenderDemo
+namespace MauiRenderDemo.Renderers
 {
     public enum VisibleImagePosition
     {
         Bottom, // Bild unten, Farbverlauf von oben nach unten
-        Top     // Bild oben, Farbverlauf von unten nach oben
+        Top,     // Bild oben, Farbverlauf von unten nach oben
+        Full // Komplettes Bild, kein Fade
     }
 
     public class BackgroundImageDrawable : IDrawable
@@ -130,7 +131,6 @@ namespace MauiRenderDemo
             canvas.SetFillPaint(gradient, dirtyRect);
             canvas.FillRectangle(0, 0, width, height);
         }
-
         public void DrawOld1(ICanvas canvas, RectF dirtyRect)
         {
             float width = dirtyRect.Width;
@@ -168,7 +168,6 @@ namespace MauiRenderDemo
             canvas.SetFillPaint(gradient, dirtyRect);
             canvas.FillRectangle(0, 0, width, height);
         }
-
         public void DrawOld2(ICanvas canvas, RectF dirtyRect)
         {
             // 1. Oberen Bereich mit der festen Farbe füllen (z.B. das obere Drittel)
@@ -208,13 +207,7 @@ namespace MauiRenderDemo
                 canvas.FillRectangle(fadeRect);
             }
         }
-
-        /// <summary>
-        /// new draw method which supports the definition of the visible image position.
-        /// </summary>
-        /// <param name="canvas"></param>
-        /// <param name="dirtyRect"></param>
-        public void Draw(ICanvas canvas, RectF dirtyRect)
+        public void DrawOld4(ICanvas canvas, RectF dirtyRect)
         {
             AppTheme currentTheme = Application.Current?.RequestedTheme ?? AppTheme.Light;
             TopBackgroundColor = currentTheme == AppTheme.Dark ? TopBackgroundColorDark : TopBackgroundColorLight;
@@ -281,5 +274,87 @@ namespace MauiRenderDemo
             canvas.SetFillPaint(gradient, dirtyRect);
             canvas.FillRectangle(0, 0, width, height);
         }
+
+
+        /// <summary>
+        /// new draw method which supports the definition of the visible image position.
+        /// </summary>
+        /// <param name="canvas"></param>
+        /// <param name="dirtyRect"></param>
+
+        public void Draw(ICanvas canvas, RectF dirtyRect)
+        {
+            AppTheme currentTheme = Application.Current?.RequestedTheme ?? AppTheme.Light;
+            TopBackgroundColor = currentTheme == AppTheme.Dark ? TopBackgroundColorDark : TopBackgroundColorLight;
+
+            float width = dirtyRect.Width;
+            float height = dirtyRect.Height;
+            float colorBlockHeight = height / 3f;
+
+            // 1. Einfarbigen Block zeichnen (nur wenn nicht Full)
+            if (VisibleImagePosition != VisibleImagePosition.Full)
+            {
+                canvas.FillColor = TopBackgroundColor;
+                if (VisibleImagePosition == VisibleImagePosition.Bottom)
+                {
+                    // Block ist oben
+                    canvas.FillRectangle(0, 0, width, colorBlockHeight);
+                }
+                else
+                {
+                    // Block ist unten
+                    canvas.FillRectangle(0, height - colorBlockHeight, width, colorBlockHeight);
+                }
+            }
+
+            // 2. Das Bild über die gesamte Seite zeichnen
+            IImage currentImage = height > width ? _image : _imageWideScreen;
+            if (currentImage != null)
+            {
+                canvas.DrawImage(currentImage, 0, 0, width, height);
+            }
+
+            // 3. Farbverlauf passend zur Position berechnen (nur wenn nicht Full)
+            if (VisibleImagePosition != VisibleImagePosition.Full)
+            {
+                LinearGradientPaint gradient;
+
+                if (VisibleImagePosition == VisibleImagePosition.Bottom)
+                {
+                    // Verlauf von Oben nach Unten (Oben deckend -> Unten transparent)
+                    gradient = new LinearGradientPaint
+                    {
+                        GradientStops = new PaintGradientStop[]
+                        {
+                    new PaintGradientStop(0.0f, TopBackgroundColor),
+                    new PaintGradientStop(colorBlockHeight / height, TopBackgroundColor),
+                    new PaintGradientStop(1.0f, TopBackgroundColor.WithAlpha(0f))
+                        },
+                        StartPoint = new Point(0, 0),
+                        EndPoint = new Point(0, 1)
+                    };
+                }
+                else
+                {
+                    // Verlauf von Unten nach Oben (Unten deckend -> Oben transparent)
+                    gradient = new LinearGradientPaint
+                    {
+                        GradientStops = new PaintGradientStop[]
+                        {
+                    new PaintGradientStop(0.0f, TopBackgroundColor.WithAlpha(0f)),
+                    new PaintGradientStop(1.0f - (colorBlockHeight / height), TopBackgroundColor),
+                    new PaintGradientStop(1.0f, TopBackgroundColor)
+                        },
+                        StartPoint = new Point(0, 0),
+                        EndPoint = new Point(0, 1)
+                    };
+                }
+
+                // Den Verlauf über die gesamte Fläche legen
+                canvas.SetFillPaint(gradient, dirtyRect);
+                canvas.FillRectangle(0, 0, width, height);
+            }
+        }
+
     }
 }

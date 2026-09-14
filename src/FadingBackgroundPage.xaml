@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderers="clr-namespace:MauiRenderDemo.Renderers"
+             x:Class="MauiRenderDemo.FadingBackgroundPage"
+             x:Name="FadingBackgroundPage"
+             Title="FadingBackgroundPage">
+    <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+        <GraphicsView
+                x:Name="FadeView"
+                HorizontalOptions="Fill" 
+                VerticalOptions="Fill">
+            <GraphicsView.Drawable>
+                <renderers:BackgroundImageDrawable
+                    x:Name="FadedBackgroundDrawable"
+                    VisibleImagePosition="Bottom"
+                    ImageFile="{StaticResource DotNetBot}" />
+            </GraphicsView.Drawable>
+        </GraphicsView>
+
+        <Grid
+            Margin="20,10"
+            RowSpacing="5"
+            RowDefinitions="5*,1*,1*,1*,5*">
+            <Button Grid.Row="1" Text="Top" Command="{Binding SetBackgroundCommand, Source={x:Reference FadingBackgroundPage}}" CommandParameter="top" />
+            <Button Grid.Row="2" Text="Full" Command="{Binding SetBackgroundCommand, Source={x:Reference FadingBackgroundPage}}" CommandParameter="full" />
+            <Button Grid.Row="3" Text="Bottom" Command="{Binding SetBackgroundCommand, Source={x:Reference FadingBackgroundPage}}" CommandParameter="bottom" />
+        </Grid>
+        
+        
+    </Grid>
+</ContentPage>
