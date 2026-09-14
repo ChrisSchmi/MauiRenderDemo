@@ -14,11 +14,6 @@ public partial class MainPage : ContentPage
     public ICommand IconTileCommand { private set; get; }
     public MainPage()
     {
-        // vor InitializeComponent - dann klappt die Bindung.
-        IconTileCommand = new Command(() =>
-        {
-            System.Diagnostics.Debug.WriteLine("Y0!");
-        });
 
         InitializeComponent();
 

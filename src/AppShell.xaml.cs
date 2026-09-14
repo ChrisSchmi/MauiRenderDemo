@@ -1,12 +1,26 @@
-﻿namespace MauiRenderDemo;
+﻿using Android.Media;
+
+namespace MauiRenderDemo;
 
 public partial class AppShell : Shell
 {
-	public AppShell()
+    public Dictionary<string, Type> Routes { get; private set; } = new Dictionary<string, Type>();
+    public AppShell()
 	{
 		InitializeComponent();
+        RegisterRoutes();
+        BindingContext = this;
+    }
 
-        // Routen für Unterseiten registrieren
-        Routing.RegisterRoute(nameof(ForgotPasswordPage), typeof(ForgotPasswordPage));
+    void RegisterRoutes()
+    {
+        Routes.Add(nameof(MainPage), typeof(MainPage));
+        Routes.Add(nameof(ForgotPasswordPage), typeof(ForgotPasswordPage));
+        Routes.Add(nameof(ButtonPage), typeof(ButtonPage));
+
+        foreach (var item in Routes)
+        {
+            Routing.RegisterRoute(item.Key, item.Value);
+        }
     }
 }

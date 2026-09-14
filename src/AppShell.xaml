@@ -11,4 +11,14 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <ShellContent
+        Route="ForgotPasswordPage"
+        Title="ForgotPassword"
+        ContentTemplate="{DataTemplate local:ForgotPasswordPage}" />
+
+    <ShellContent
+        Route="ButtonPage"
+        Title="ButtonPage"
+        ContentTemplate="{DataTemplate local:ButtonPage}" />
+
 </Shell>
