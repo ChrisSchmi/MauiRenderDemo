@@ -60,7 +60,7 @@ public partial class MarkdownViewerPage : ContentPage
         {
             IsLoading = true;
 
-            await Task.Delay(5_000);
+            await Task.Delay(2_000);
             // Lädt den Markdown-Text direkt von der URL herunter
             MarkdownContent = await _httpClient.GetStringAsync(url);
         }
