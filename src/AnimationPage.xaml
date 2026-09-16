@@ -11,7 +11,12 @@
                       HorizontalOptions="Fill"
                       VerticalOptions="Fill">
             <GraphicsView.Drawable>
-                <renderers:PlasmaDrawable x:Name="Drawable" />
+                <renderers:PlasmaDrawable
+                    x:Name="Drawable"
+                    BackgroundColor="#ffffff"
+                    Color1="#ff0000"
+                    Color2="#ffff00"
+                    Color3="#00ff00" />
             </GraphicsView.Drawable>
         </GraphicsView>
     </Grid>

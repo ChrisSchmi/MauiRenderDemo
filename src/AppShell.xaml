@@ -45,4 +45,11 @@
         Title="BottomSheetPage"
         ContentTemplate="{DataTemplate local:BottomSheetPage}" />
 
+    <ShellContent
+        Route="MarkdownViewerPage"
+        Title="MarkdownViewerPage"
+        ContentTemplate="{DataTemplate local:MarkdownViewerPage}" />
+
+    
+
 </Shell>

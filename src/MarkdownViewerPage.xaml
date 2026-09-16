@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:markdown="clr-namespace:Plugin.Maui.MarkdownView;assembly=Plugin.Maui.MarkdownView"
+             x:Class="MauiRenderDemo.MarkdownViewerPage"
+             x:Name="MarkdownPage"
+             Title="MarkdownViewerPage">
+    <ScrollView>
+        <Grid
+            RowDefinitions="auto"
+            VerticalOptions="Fill"
+            HorizontalOptions="Fill">
+            <ActivityIndicator
+                Grid.Row="0"
+                IsRunning="{Binding IsLoading, Source={x:Reference MarkdownPage}}"
+                SemanticProperties.Description="Loading" />
+
+            <markdown:MarkdownView
+                Grid.Row="0"
+                MarkdownText="{Binding MarkdownContent, Source={x:Reference MarkdownPage}}" 
+                Margin="16"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

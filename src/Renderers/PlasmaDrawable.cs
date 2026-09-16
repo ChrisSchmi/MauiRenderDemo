@@ -232,7 +232,7 @@ public class PlasmaDrawable : IDrawable
     private const int Height = 40;
 
     // Wunschfarben konfigurieren
-    public MauiColor ColorBg { get; set; } = Color.FromRgba(255, 255, 255, 128);
+    public MauiColor BackgroundColor { get; set; } = Color.FromRgba(255, 255, 255, 128);
     public MauiColor Color1 { get; set; } = Color.FromRgba(205, 205, 205, 255);
     public MauiColor Color2 { get; set; } = Color.FromRgba(180, 180, 180, 255);
     public MauiColor Color3 { get; set; } = Color.FromRgba(230, 230, 230, 255);
@@ -264,7 +264,7 @@ public class PlasmaDrawable : IDrawable
 
                 // Farbe berechnen und im Buffer speichern
                 if (gesamt < 0.33f)
-                    _colorBuffer[rowIndex + x] = LerpColor(ColorBg, Color1, gesamt * 3.0f);
+                    _colorBuffer[rowIndex + x] = LerpColor(BackgroundColor, Color1, gesamt * 3.0f);
                 else if (gesamt < 0.66f)
                     _colorBuffer[rowIndex + x] = LerpColor(Color1, Color2, (gesamt - 0.33f) * 3.0f);
                 else
@@ -333,7 +333,7 @@ public class PlasmaDrawable : IDrawable
                 // Farbinterpolation
                 MauiColor finalColor;
                 if (gesamt < 0.33f)
-                    finalColor = LerpColor(ColorBg, Color1, gesamt * 3.0f);
+                    finalColor = LerpColor(BackgroundColor, Color1, gesamt * 3.0f);
                 else if (gesamt < 0.66f)
                     finalColor = LerpColor(Color1, Color2, (gesamt - 0.33f) * 3.0f);
                 else

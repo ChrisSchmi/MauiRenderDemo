@@ -20,7 +20,7 @@ public partial class AppShell : Shell
         Routes.Add(nameof(AnimationPage), typeof(AnimationPage));
         Routes.Add(nameof(FadingBackgroundPage), typeof(FadingBackgroundPage));
         Routes.Add(nameof(BottomSheetPage), typeof(BottomSheetPage));
-        
+        Routes.Add(nameof(MarkdownViewerPage), typeof(MarkdownViewerPage));
 
         foreach (var item in Routes)
         {
