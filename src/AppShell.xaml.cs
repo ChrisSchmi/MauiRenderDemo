@@ -21,6 +21,8 @@ public partial class AppShell : Shell
         Routes.Add(nameof(FadingBackgroundPage), typeof(FadingBackgroundPage));
         Routes.Add(nameof(BottomSheetPage), typeof(BottomSheetPage));
         Routes.Add(nameof(MarkdownViewerPage), typeof(MarkdownViewerPage));
+        Routes.Add(nameof(FadingColorBackgroundPage), typeof(FadingColorBackgroundPage));
+        
 
         foreach (var item in Routes)
         {

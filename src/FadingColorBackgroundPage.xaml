@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderers="clr-namespace:MauiRenderDemo.Renderers"
+             x:Class="MauiRenderDemo.FadingColorBackgroundPage"
+             Title="FadingColorBackgroundPage"
+             SafeAreaEdges="None">
+    <Grid
+        VerticalOptions="Fill"
+        HorizontalOptions="Fill"
+        SafeAreaEdges="None">
+        <GraphicsView
+            x:Name="FadingBackgroundView"
+            HorizontalOptions="Fill" 
+            VerticalOptions="Fill">
+            <GraphicsView.Drawable>
+                <renderers:FadingColorBackgroundDrawable x:Name="FadedBackgroundDrawable">
+                    <renderers:FadingColorBackgroundDrawable.ColorsList>
+                        <Color>#FFBA00</Color>
+                        <Color>#50FFBA00</Color>
+                        <Color>#FFFFFF</Color>
+                        <Color>#4000FFFF</Color>
+                        <Color>#FFFFFF</Color>
+                        <Color>#50FF00DA</Color>
+                        <Color>#FF00DA</Color>
+                    </renderers:FadingColorBackgroundDrawable.ColorsList>
+                </renderers:FadingColorBackgroundDrawable>
+            </GraphicsView.Drawable>
+        </GraphicsView>
+    </Grid>
+</ContentPage>

@@ -50,6 +50,11 @@
         Title="MarkdownViewerPage"
         ContentTemplate="{DataTemplate local:MarkdownViewerPage}" />
 
+    <ShellContent
+        Route="FadingColorBackgroundPage"
+        Title="FadingColorBackgroundPage"
+        ContentTemplate="{DataTemplate local:FadingColorBackgroundPage}" />
     
+
 
 </Shell>
