@@ -1,7 +1,9 @@
 # MAUI Render Demo
 
 Just a test, what MAUI can render as background animation on a Page.
-AI generated Plasma animation with some modifications by me. Have fun ;-)
+AI generated Plasma animation with some modifications by me.
+Then more and more experiments were added.
+Have fun ;-)
 
 ## PlasmaDrawable
 <img width="407" height="914" alt="image" src="https://github.com/user-attachments/assets/70243543-2833-49e6-8fcf-5cf1afae5edd" />
@@ -10,10 +12,11 @@ AI generated Plasma animation with some modifications by me. Have fun ;-)
 <img width="407" height="865" alt="image" src="https://github.com/user-attachments/assets/a68b0b19-64f7-46c2-84ac-10069448b525" />
 
 ## Fading Background Page
-
 <img width="416" height="917" alt="image" src="https://github.com/user-attachments/assets/e3f37748-8277-42f5-a6ea-0eb44cd4cfda" />
 
 ## Animation Page
 <img width="410" height="907" alt="image" src="https://github.com/user-attachments/assets/fc83dca1-e659-4a5a-b9bd-c6ca0b7354ed" />
 
-            
+## Fading Color Background Page
+<img width="409" height="910" alt="image" src="https://github.com/user-attachments/assets/65741138-7571-49cf-9d52-25847605569e" />
+
